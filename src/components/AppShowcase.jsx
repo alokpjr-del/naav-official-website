@@ -1,4 +1,5 @@
 import "./AppShowcase.css";
+import handleImageError from "../utils/handleImageError";
 
 import slide1 from "../assets/Slide 1.png";
 import slide2 from "../assets/Slide 2.png";
@@ -45,6 +46,7 @@ export default function AppShowcase() {
             <img
               src={image}
               alt={`NAAV App ${index + 1}`}
+              onError={handleImageError}
             />
 
           </div>

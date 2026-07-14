@@ -1,5 +1,6 @@
 import "./About.css";
 import aboutImage from "../assets/2048_858@3x.png";
+import handleImageError from "../utils/handleImageError";
 
 function About() {
   return (
@@ -13,6 +14,7 @@ function About() {
           <img
             src={aboutImage}
             alt="About NAAV"
+            onError={handleImageError}
           />
 
         </div>

@@ -1,5 +1,6 @@
 import "./Hero.css";
 import heroImage from "../assets/hero.png";
+import handleImageError from "../utils/handleImageError";
 
 function Hero() {
   return (
@@ -69,6 +70,7 @@ function Hero() {
           <img
             src={heroImage}
             alt="NAAV Delivery"
+            onError={handleImageError}
           />
 
           <div className="floating-card card1">
