@@ -1,92 +1,105 @@
+import {
+  ArrowRight,
+  Bike,
+  Clock3,
+  MapPin,
+  ShieldCheck,
+  ShoppingBag,
+  Star,
+  Utensils,
+} from "lucide-react";
 import "./Hero.css";
 import heroImage from "../assets/hero.png";
 
 function Hero() {
   return (
     <section className="hero" id="home">
-
       <div className="hero-container">
-
-        {/* Left Content */}
-
         <div className="hero-left">
-
           <span className="hero-tag">
-            🚀 Kundapura's Own Delivery Platform
+            <MapPin size={15} />
+            Made in Kundapura, for Kundapura
           </span>
 
           <h1>
-            Fast, Reliable &
-            <span> Local Delivery</span>
-            <br />
-            at Your Doorstep.
+            Your neighbourhood,
+            <span> delivered.</span>
           </h1>
 
           <p>
-            NAAV Delivery connects customers with restaurants,
-            groceries, medicines and local stores across Kundapura.
-            Experience lightning-fast delivery, affordable prices,
-            and trusted local service — all in one app.
+            From a hot coastal meal to last-minute groceries and medicines,
+            NAAV brings Kundapura&apos;s trusted local businesses to your door.
           </p>
 
           <div className="hero-buttons">
-
             <a href="#services" className="primary-btn">
-              Explore Services
+              Explore services
+              <ArrowRight size={18} />
             </a>
 
-            <a href="#about" className="secondary-btn">
-              Learn More
+            <a href="#how-it-works" className="secondary-btn">
+              See how it works
             </a>
-
           </div>
 
-          <div className="hero-stats">
-
-            <div className="stat-card">
-              <h2>30+</h2>
-              <p>Partner Stores</p>
+          <div className="hero-proof">
+            <div className="proof-avatars" aria-hidden="true">
+              <span>NK</span>
+              <span>AP</span>
+              <span>RS</span>
             </div>
-
-            <div className="stat-card">
-              <h2>15 Min</h2>
-              <p>Average Delivery</p>
+            <div>
+              <div className="proof-rating">
+                <Star size={15} fill="currentColor" />
+                <strong>Local. Fast. Dependable.</strong>
+              </div>
+              <span>Trusted by customers across Kundapura</span>
             </div>
-
-            <div className="stat-card">
-              <h2>1000+</h2>
-              <p>Happy Customers</p>
-            </div>
-
           </div>
-
         </div>
-
-        {/* Right Image */}
 
         <div className="hero-right">
+          <div className="hero-visual">
+            <div className="hero-orbit hero-orbit-one" />
+            <div className="hero-orbit hero-orbit-two" />
 
-          <img
-            src={heroImage}
-            alt="NAAV Delivery"
-          />
+            <div className="hero-image-wrap">
+              <span className="hero-image-label">NAAV express</span>
+              <img src={heroImage} alt="NAAV delivery app experience" />
+            </div>
 
-          <div className="floating-card card1">
-            🍔 Food Delivery
+            <div className="floating-card hero-food-card">
+              <span className="floating-icon">
+                <Utensils size={18} />
+              </span>
+              <span>
+                <small>Craving something?</small>
+                Local food, on the way
+              </span>
+            </div>
+
+            <div className="floating-card hero-time-card">
+              <Clock3 size={18} />
+              Fast local delivery
+            </div>
+
+            <div className="floating-card hero-store-card">
+              <span className="floating-icon floating-icon-gold">
+                <ShoppingBag size={18} />
+              </span>
+              <span>
+                <small>One simple app</small>
+                Food, grocery & more
+              </span>
+            </div>
+
+            <div className="hero-trust-card">
+              <span><ShieldCheck size={18} /> Trusted stores</span>
+              <span><Bike size={18} /> Local riders</span>
+            </div>
           </div>
-
-          <div className="floating-card card2">
-            🛒 Grocery
-          </div>
-
-          <div className="floating-card card3">
-            💊 Medicines
-          </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }

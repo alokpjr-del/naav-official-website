@@ -1,145 +1,73 @@
+import { Bike, Check, Search, ShoppingBag } from "lucide-react";
 import "./About.css";
-import aboutImage from "../assets/2048_858@3x.png";
+import aboutImage from "../assets/2048 _ 858@3x.png";
 
 function About() {
+  const steps = [
+    {
+      number: "01",
+      icon: Search,
+      title: "Find what you need",
+      description: "Browse restaurants, stores and everyday essentials near you.",
+    },
+    {
+      number: "02",
+      icon: ShoppingBag,
+      title: "Place your order",
+      description: "Choose your favourites and confirm everything in a few taps.",
+    },
+    {
+      number: "03",
+      icon: Bike,
+      title: "Relax while we deliver",
+      description: "A local delivery partner brings your order right to your door.",
+    },
+  ];
+
   return (
-    <section className="about" id="about">
+    <section className="about" id="how-it-works">
       <div className="about-container">
-
-        {/* Left Image */}
-
         <div className="about-image">
-
-          <img
-            src={aboutImage}
-            alt="About NAAV"
-          />
-
+          <div className="about-image-frame">
+            <img src={aboutImage} alt="Local products available through NAAV" />
+          </div>
+          <div className="about-image-card">
+            <span><Check size={18} /></span>
+            <div>
+              <strong>Simple from start to finish</strong>
+              <p>Local ordering without the clutter.</p>
+            </div>
+          </div>
         </div>
-
-        {/* Right Content */}
 
         <div className="about-content">
-
-          <span className="section-tag">
-            ABOUT NAAV
-          </span>
-
+          <span className="about-tag">How it works</span>
           <h2>
-            Kundapura's Trusted
-            <span> Local Delivery Partner</span>
+            Local delivery made
+            <span> refreshingly easy.</span>
           </h2>
-
-          <p>
-            NAAV Delivery Service is a home-grown delivery platform
-            built exclusively for Kundapura. Our mission is to connect
-            local businesses with local customers through fast,
-            affordable and reliable delivery.
+          <p className="about-lead">
+            NAAV connects you to the places you already know and trust, then
+            gets your order moving with a dependable local delivery network.
           </p>
 
-          <p>
-            From delicious restaurant meals to groceries,
-            medicines, fresh vegetables, fruits and parcel delivery,
-            NAAV provides everything you need from your favourite
-            local stores in one easy-to-use platform.
-          </p>
+          <div className="about-steps">
+            {steps.map((step) => {
+              const Icon = step.icon;
 
-          <div className="about-grid">
-
-            <div className="about-card">
-
-              <div className="icon">
-                🚀
-              </div>
-
-              <div>
-
-                <h3>Fast Delivery</h3>
-
-                <p>
-                  Quick doorstep delivery across Kundapura.
-                </p>
-
-              </div>
-
-            </div>
-
-            <div className="about-card">
-
-              <div className="icon">
-                🛍️
-              </div>
-
-              <div>
-
-                <h3>Local Stores</h3>
-
-                <p>
-                  Supporting local restaurants and businesses.
-                </p>
-
-              </div>
-
-            </div>
-
-            <div className="about-card">
-
-              <div className="icon">
-                💰
-              </div>
-
-              <div>
-
-                <h3>Affordable Pricing</h3>
-
-                <p>
-                  Lower delivery charges with no hidden costs.
-                </p>
-
-              </div>
-
-            </div>
-
-            <div className="about-card">
-
-              <div className="icon">
-                ❤️
-              </div>
-
-              <div>
-
-                <h3>Customer First</h3>
-
-                <p>
-                  Friendly support and reliable service every day.
-                </p>
-
-              </div>
-
-            </div>
-
+              return (
+                <article className="about-step" key={step.number}>
+                  <span className="step-number">{step.number}</span>
+                  <span className="step-icon"><Icon size={21} /></span>
+                  <div>
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
+                  </div>
+                </article>
+              );
+            })}
           </div>
-
-          <div className="about-buttons">
-
-            <a
-              href="#services"
-              className="about-btn"
-            >
-              Explore Services
-            </a>
-
-            <a
-              href="#contact"
-              className="about-outline"
-            >
-              Contact Us
-            </a>
-
-          </div>
-
         </div>
-
       </div>
     </section>
   );
