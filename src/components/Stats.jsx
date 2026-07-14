@@ -1,48 +1,57 @@
+import { Bike, Layers3, Store, UsersRound } from "lucide-react";
+import "./Stats.css";
+
 export default function Stats() {
   const stats = [
-    { number: "100+", title: "Restaurant Partners" },
-    { number: "10K+", title: "Happy Customers" },
-    { number: "25+", title: "Delivery Partners" },
-    { number: "24/7", title: "Customer Support" },
+    {
+      number: "30+",
+      title: "Local partners",
+      detail: "Restaurants and neighbourhood stores",
+      icon: Store,
+    },
+    {
+      number: "1K+",
+      title: "Happy customers",
+      detail: "Choosing convenient local delivery",
+      icon: UsersRound,
+    },
+    {
+      number: "6",
+      title: "Delivery categories",
+      detail: "Everything essential in one app",
+      icon: Layers3,
+    },
+    {
+      number: "100%",
+      title: "Local network",
+      detail: "Built around Kundapura communities",
+      icon: Bike,
+    },
   ];
 
   return (
-    <section style={styles.section}>
-      <h2 style={styles.heading}>NAAV in Numbers</h2>
+    <section className="stats-section" aria-label="NAAV in numbers">
+      <div className="stats-shell">
+        <div className="stats-intro">
+          <span>NAAV in numbers</span>
+          <p>A growing delivery ecosystem powered by local trust.</p>
+        </div>
 
-      <div style={styles.grid}>
-        {stats.map((item, index) => (
-          <div key={index} style={styles.card}>
-            <h1>{item.number}</h1>
-            <p>{item.title}</p>
-          </div>
-        ))}
+        <div className="stats-grid">
+          {stats.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <div className="stats-card" key={item.title}>
+                <span className="stats-icon"><Icon size={20} /></span>
+                <strong>{item.number}</strong>
+                <h2>{item.title}</h2>
+                <p>{item.detail}</p>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
 }
-
-const styles = {
-  section: {
-    padding: "80px 20px",
-    background: "#ffffff",
-    textAlign: "center",
-  },
-  heading: {
-    fontSize: "36px",
-    marginBottom: "40px",
-  },
-  grid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))",
-    gap: "20px",
-    maxWidth: "1100px",
-    margin: "auto",
-  },
-  card: {
-    padding: "30px",
-    borderRadius: "15px",
-    background: "#f8f8f8",
-    boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
-  },
-};

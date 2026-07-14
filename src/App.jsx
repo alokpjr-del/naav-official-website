@@ -1,9 +1,9 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Stats from "./components/Stats";
 import About from "./components/About";
 import WhyChoose from "./components/WhyChoose";
 import Services from "./components/Services";
-import Restaurants from "./components/Restaurants";
 import AppShowcase from "./components/AppShowcase";
 import Franchise from "./components/Franchise";
 import Testimonials from "./components/Testimonials";
@@ -19,31 +19,14 @@ function App() {
       <Navbar />
 
       <main>
-
-        {/* Hero */}
         <Hero />
-
-        {/* About */}
-        <About />
-
-        {/* Why Choose */}
-        <WhyChoose />
-
-        {/* Services */}
+        <Stats />
         <Services />
-
-        {/* Restaurants */}
-        <Restaurants />
-
-        {/* App Showcase */}
-        <AppShowcase />
-
-        {/* Franchise */}
-        <Franchise />
-
-        {/* Testimonials */}
+        <About />
+        <WhyChoose />
         <Testimonials />
-
+        <Franchise />
+        <AppShowcase />
       </main>
 
       {/* Footer */}

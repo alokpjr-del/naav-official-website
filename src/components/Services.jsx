@@ -1,95 +1,96 @@
+import {
+  ArrowUpRight,
+  Croissant,
+  Leaf,
+  PackageCheck,
+  Pill,
+  ShoppingBasket,
+} from "lucide-react";
 import "./Services.css";
 
 export default function Services() {
   const services = [
     {
-      icon: "🍔",
+      icon: Croissant,
       title: "Food Delivery",
       description:
-        "Hot & delicious meals from your favourite restaurants delivered quickly across Kundapura.",
+        "Kundapura favourites, coastal classics and everyday cravings delivered fresh.",
+      label: "Most loved",
     },
     {
-      icon: "🥬",
+      icon: ShoppingBasket,
       title: "Grocery Delivery",
       description:
-        "Fresh vegetables, fruits and daily essentials delivered to your doorstep.",
+        "Fresh produce, pantry essentials and daily needs from nearby stores.",
+      label: "Daily essentials",
     },
     {
-      icon: "💊",
+      icon: Pill,
       title: "Medicine Delivery",
       description:
-        "Get medicines delivered safely from trusted pharmacies within minutes.",
+        "Convenient doorstep delivery from trusted local pharmacies.",
+      label: "Care at home",
     },
     {
-      icon: "📦",
+      icon: PackageCheck,
       title: "Parcel Delivery",
       description:
-        "Fast, secure and affordable parcel delivery across Kundapura.",
+        "Reliable local pickup and drop for packages that need to move quickly.",
+      label: "Across town",
     },
     {
-      icon: "🌰",
+      icon: Leaf,
       title: "Dry Fruits",
       description:
-        "Premium quality dry fruits from trusted local stores.",
+        "Premium nuts and dry fruits sourced from trusted neighbourhood sellers.",
+      label: "Premium picks",
     },
     {
-      icon: "🌿",
+      icon: Leaf,
       title: "Spices",
       description:
-        "Fresh and authentic spices for your everyday cooking.",
+        "Authentic spices and kitchen staples for flavourful home cooking.",
+      label: "Local flavours",
     },
   ];
 
   return (
     <section className="services" id="services">
-      <div className="container">
-
+      <div className="services-container">
         <div className="services-header">
+          <div>
+            <span className="services-tag">What we deliver</span>
+            <h2>
+              One app for every
+              <span> local need.</span>
+            </h2>
+          </div>
 
-          <span className="section-tag">
-            OUR SERVICES
-          </span>
-
-          <h2>
-            Everything You Need,
-            <br />
-            Delivered by <span>NAAV</span>
-          </h2>
-
-          <p>
-            Food, Grocery, Medicine, Parcel, Dry Fruits and
-            Spices — all delivered from trusted local stores
-            through one simple app.
-          </p>
-
+          <p>Discover Kundapura&apos;s restaurants, stores and essentials through a delivery experience designed around your day.</p>
         </div>
 
         <div className="services-grid">
+          {services.map((item) => {
+            const Icon = item.icon;
 
-          {services.map((item, index) => (
-            <div
-              className="service-card"
-              key={index}
-              style={{
-                animationDelay: `${index * 0.12}s`,
-              }}
-            >
-              <div className="service-icon">
-                {item.icon}
-              </div>
+            return (
+              <article className="service-card" key={item.title}>
+                <div className="service-card-top">
+                  <span className="service-icon"><Icon size={26} /></span>
+                  <span className="service-label">{item.label}</span>
+                </div>
 
-              <h3>{item.title}</h3>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
 
-              <p>{item.description}</p>
-
-              <button className="service-btn">
-                Learn More →
-              </button>
-            </div>
-          ))}
-
+                <a className="service-link" href="#how-it-works">
+                  See how it works
+                  <ArrowUpRight size={17} />
+                </a>
+              </article>
+            );
+          })}
         </div>
-
       </div>
     </section>
   );
