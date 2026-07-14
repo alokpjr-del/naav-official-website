@@ -1,5 +1,5 @@
 import "./About.css";
-import aboutImage from "../assets/2048_858@3x.png";
+import aboutImage from "../assets/2048 _ 858@3x.png";
 
 function About() {
   return (
