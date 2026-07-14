@@ -1,0 +1,64 @@
+.showcase{
+padding:100px 8%;
+background:#ffffff;
+}
+
+.showcase-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.showcase-title span{
+color:#d62828;
+font-weight:700;
+letter-spacing:1px;
+}
+
+.showcase-title h2{
+font-size:48px;
+margin:15px 0;
+color:#222;
+}
+
+.showcase-title strong{
+color:#d62828;
+}
+
+.showcase-title p{
+font-size:18px;
+color:#666;
+}
+
+.showcase-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+max-width:1300px;
+margin:auto;
+}
+
+.phone-card{
+background:#fff;
+padding:18px;
+border-radius:22px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+transition:.35s;
+}
+
+.phone-card:hover{
+transform:translateY(-10px);
+}
+
+.phone-card img{
+width:100%;
+display:block;
+border-radius:18px;
+}
+
+@media(max-width:768px){
+
+.showcase-title h2{
+font-size:36px;
+}
+
+}
