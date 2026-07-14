@@ -1,4 +1,5 @@
 import "./AppShowcase.css";
+import SectionHeader from "./SectionHeader";
 
 import slide1 from "../assets/Slide 1.png";
 import slide2 from "../assets/Slide 2.png";
@@ -20,21 +21,18 @@ export default function AppShowcase() {
   return (
     <section className="showcase">
 
-      <div className="showcase-title">
-
-        <span>NAAV MOBILE APP</span>
-
-        <h2>
-          Everything You Need
-          <br />
-          <strong>In One App</strong>
-        </h2>
-
-        <p>
-          Food • Grocery • Medicine • Parcel • Dry Fruits • Spices
-        </p>
-
-      </div>
+      <SectionHeader
+        className="showcase-title"
+        eyebrow="NAAV MOBILE APP"
+        title={
+          <>
+            Everything You Need
+            <br />
+            <strong>In One App</strong>
+          </>
+        }
+        description="Food • Grocery • Medicine • Parcel • Dry Fruits • Spices"
+      />
 
       <div className="showcase-grid">
 

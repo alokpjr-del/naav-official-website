@@ -1,4 +1,5 @@
 import "./Franchise.css";
+import SectionHeader from "./SectionHeader";
 
 const plans = [
   {
@@ -47,20 +48,17 @@ export default function Franchise() {
   return (
     <section className="franchise" id="franchise">
 
-      <div className="franchise-header">
-
-        <span>FRANCHISE OPPORTUNITIES</span>
-
-        <h2>
-          Start Your Own
-          <span> NAAV Delivery Business</span>
-        </h2>
-
-        <p>
-          Become a part of Kundapura's fastest growing delivery network.
-        </p>
-
-      </div>
+      <SectionHeader
+        className="franchise-header"
+        eyebrow="FRANCHISE OPPORTUNITIES"
+        title={
+          <>
+            Start Your Own
+            <span> NAAV Delivery Business</span>
+          </>
+        }
+        description="Become a part of Kundapura's fastest growing delivery network."
+      />
 
       <div className="franchise-grid">
 

@@ -1,4 +1,6 @@
 import "./Services.css";
+import SectionHeader from "./SectionHeader";
+import FeatureCard from "./FeatureCard";
 
 export default function Services() {
   const services = [
@@ -44,48 +46,36 @@ export default function Services() {
     <section className="services" id="services">
       <div className="container">
 
-        <div className="services-header">
-
-          <span className="section-tag">
-            OUR SERVICES
-          </span>
-
-          <h2>
-            Everything You Need,
-            <br />
-            Delivered by <span>NAAV</span>
-          </h2>
-
-          <p>
-            Food, Grocery, Medicine, Parcel, Dry Fruits and
-            Spices — all delivered from trusted local stores
-            through one simple app.
-          </p>
-
-        </div>
+        <SectionHeader
+          className="services-header"
+          eyebrowClassName="section-tag"
+          eyebrow="OUR SERVICES"
+          title={
+            <>
+              Everything You Need,
+              <br />
+              Delivered by <span>NAAV</span>
+            </>
+          }
+          description="Food, Grocery, Medicine, Parcel, Dry Fruits and Spices — all delivered from trusted local stores through one simple app."
+        />
 
         <div className="services-grid">
 
           {services.map((item, index) => (
-            <div
-              className="service-card"
+            <FeatureCard
               key={index}
-              style={{
-                animationDelay: `${index * 0.12}s`,
-              }}
+              className="service-card"
+              iconClassName="service-icon"
+              icon={item.icon}
+              title={item.title}
+              description={item.description}
+              style={{ animationDelay: `${index * 0.12}s` }}
             >
-              <div className="service-icon">
-                {item.icon}
-              </div>
-
-              <h3>{item.title}</h3>
-
-              <p>{item.description}</p>
-
               <button className="service-btn">
                 Learn More →
               </button>
-            </div>
+            </FeatureCard>
           ))}
 
         </div>

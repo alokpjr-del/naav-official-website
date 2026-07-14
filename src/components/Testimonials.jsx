@@ -1,4 +1,5 @@
 import "./Testimonials.css";
+import SectionHeader from "./SectionHeader";
 
 const reviews = [
   {
@@ -25,18 +26,17 @@ export default function Testimonials() {
   return (
     <section className="testimonials">
 
-      <div className="title">
-        <span>CUSTOMER REVIEWS</span>
-
-        <h2>
-          Loved by
-          <span> Kundapura</span>
-        </h2>
-
-        <p>
-          Thousands of happy customers trust NAAV every day.
-        </p>
-      </div>
+      <SectionHeader
+        className="title"
+        eyebrow="CUSTOMER REVIEWS"
+        title={
+          <>
+            Loved by
+            <span> Kundapura</span>
+          </>
+        }
+        description="Thousands of happy customers trust NAAV every day."
+      />
 
       <div className="review-grid">
 
