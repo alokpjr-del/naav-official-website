@@ -1,4 +1,6 @@
 import "./WhyChoose.css";
+import SectionHeader from "./SectionHeader";
+import FeatureCard from "./FeatureCard";
 
 function WhyChoose() {
   const features = [
@@ -45,47 +47,30 @@ function WhyChoose() {
 
       <div className="why-container">
 
-        <div className="why-header">
-
-          <span className="why-tag">
-            WHY CHOOSE NAAV
-          </span>
-
-          <h2>
-            Why Thousands Choose
-            <span> NAAV Delivery</span>
-          </h2>
-
-          <p>
-            NAAV is built exclusively for Kundapura to provide faster,
-            affordable and trustworthy local delivery services.
-          </p>
-
-        </div>
+        <SectionHeader
+          className="why-header"
+          eyebrowClassName="why-tag"
+          eyebrow="WHY CHOOSE NAAV"
+          title={
+            <>
+              Why Thousands Choose
+              <span> NAAV Delivery</span>
+            </>
+          }
+          description="NAAV is built exclusively for Kundapura to provide faster, affordable and trustworthy local delivery services."
+        />
 
         <div className="why-grid">
 
           {features.map((item, index) => (
-
-            <div
-              className="why-card"
+            <FeatureCard
               key={index}
-            >
-
-              <div className="why-icon">
-                {item.icon}
-              </div>
-
-              <h3>
-                {item.title}
-              </h3>
-
-              <p>
-                {item.description}
-              </p>
-
-            </div>
-
+              className="why-card"
+              iconClassName="why-icon"
+              icon={item.icon}
+              title={item.title}
+              description={item.description}
+            />
           ))}
 
         </div>
