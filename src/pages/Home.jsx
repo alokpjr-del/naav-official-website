@@ -6,6 +6,7 @@ import {
   Package,
   Star,
 } from "lucide-react";
+import handleImageError from "../utils/handleImageError";
 
 export default function Home() {
   const services = [
@@ -78,6 +79,7 @@ export default function Home() {
               src="/phone.png"
               alt="NAAV App"
               className="w-80 drop-shadow-2xl"
+              onError={handleImageError}
             />
 
           </div>

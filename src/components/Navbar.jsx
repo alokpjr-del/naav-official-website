@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Navbar.css";
 import logo from "../assets/NAAV LOGO.png";
+import handleImageError from "../utils/handleImageError";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,7 +11,7 @@ function Navbar() {
       <div className="nav-container">
 
         <div className="logo">
-          <img src={logo} alt="NAAV Logo" />
+          <img src={logo} alt="NAAV Logo" onError={handleImageError} />
         </div>
 
         <nav className={menuOpen ? "nav-links active" : "nav-links"}>
