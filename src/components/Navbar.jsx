@@ -20,8 +20,9 @@ function Navbar() {
         >
           <a href="#home" onClick={closeMenu}>Home</a>
           <a href="#services" onClick={closeMenu}>Services</a>
+          <a href="#restaurants" onClick={closeMenu}>Restaurants</a>
           <a href="#how-it-works" onClick={closeMenu}>How it works</a>
-          <a href="#whychoose" onClick={closeMenu}>Why NAAV</a>
+          <a href="#offers" onClick={closeMenu}>Offers</a>
           <a href="#franchise" onClick={closeMenu}>Franchise</a>
 
           <a className="nav-btn" href="#services" onClick={closeMenu}>

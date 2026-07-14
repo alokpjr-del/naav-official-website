@@ -1,10 +1,12 @@
+import { ArrowRight, Check, Crown } from "lucide-react";
 import "./Franchise.css";
 
 const plans = [
   {
     title: "Starter Franchise",
     price: "₹5 Lakhs",
-    button: "Apply Now",
+    description: "For entrepreneurs launching their first local hub.",
+    button: "Apply now",
     features: [
       "1 Delivery Hub",
       "Food, Grocery & Parcel Setup",
@@ -17,8 +19,9 @@ const plans = [
   {
     title: "Growth Franchise",
     price: "₹10 Lakhs",
+    description: "For partners scaling across multiple neighbourhoods.",
     featured: true,
-    button: "Join Now",
+    button: "Join now",
     features: [
       "Up to 3 Delivery Hubs",
       "Complete Technology Suite",
@@ -31,7 +34,8 @@ const plans = [
   {
     title: "Enterprise Franchise",
     price: "₹25 Lakhs",
-    button: "Partner With Us",
+    description: "For operators expanding across cities.",
+    button: "Partner with us",
     features: [
       "Multi City Operations",
       "Dedicated Account Manager",
@@ -46,49 +50,59 @@ const plans = [
 export default function Franchise() {
   return (
     <section className="franchise" id="franchise">
+      <div className="franchise-container">
+        <div className="franchise-header">
+          <span className="franchise-tag">Franchise opportunities</span>
+          <h2>
+            Build your own
+            <span> NAAV delivery business.</span>
+          </h2>
+          <p>
+            Join Kundapura&apos;s fastest growing delivery network with a plan
+            built around your ambitions.
+          </p>
+        </div>
 
-      <div className="franchise-header">
+        <div className="franchise-grid">
+          {plans.map((plan) => (
+            <article
+              className={`franchise-card ${plan.featured ? "featured" : ""}`}
+              key={plan.title}
+            >
+              {plan.featured && (
+                <span className="franchise-flag">
+                  <Crown size={14} fill="currentColor" />
+                  Most popular
+                </span>
+              )}
 
-        <span>FRANCHISE OPPORTUNITIES</span>
+              <h3>{plan.title}</h3>
+              <p className="franchise-desc">{plan.description}</p>
 
-        <h2>
-          Start Your Own
-          <span> NAAV Delivery Business</span>
-        </h2>
+              <div className="franchise-price">
+                {plan.price}
+                <span>one-time</span>
+              </div>
 
-        <p>
-          Become a part of Kundapura's fastest growing delivery network.
-        </p>
+              <ul>
+                {plan.features.map((item) => (
+                  <li key={item}>
+                    <span className="franchise-check">
+                      <Check size={14} strokeWidth={3} />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
 
+              <button type="button" className="franchise-btn">
+                {plan.button}
+                <ArrowRight size={17} />
+              </button>
+            </article>
+          ))}
+        </div>
       </div>
-
-      <div className="franchise-grid">
-
-        {plans.map((plan, index) => (
-          <div
-            className={`franchise-card ${plan.featured ? "featured" : ""}`}
-            key={index}
-          >
-
-            <h3>{plan.title}</h3>
-
-            <div className="price">
-              {plan.price}
-            </div>
-
-            <ul>
-              {plan.features.map((item, i) => (
-                <li key={i}>✔ {item}</li>
-              ))}
-            </ul>
-
-            <button>{plan.button}</button>
-
-          </div>
-        ))}
-
-      </div>
-
     </section>
   );
 }

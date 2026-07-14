@@ -1,97 +1,88 @@
+import { ArrowRight, BadgePercent, Gift, Sparkles, Truck, Wallet } from "lucide-react";
 import "./WhyChoose.css";
 
+const offers = [
+  {
+    icon: Truck,
+    badge: "In the app",
+    title: "Welcome offers",
+    description:
+      "Explore introductory savings available to customers getting started with NAAV.",
+    accent: "brand",
+  },
+  {
+    icon: BadgePercent,
+    badge: "Local partners",
+    title: "Everyday grocery value",
+    description:
+      "Discover partner-led value on fresh produce and daily essentials nearby.",
+    accent: "gold",
+  },
+  {
+    icon: Wallet,
+    badge: "Every order",
+    title: "Clear delivery pricing",
+    description:
+      "See delivery charges before confirming, with a simple and transparent checkout.",
+    accent: "brand",
+  },
+  {
+    icon: Gift,
+    badge: "Limited-time",
+    title: "Seasonal local specials",
+    description:
+      "Find changing offers from restaurants and neighbourhood stores in one place.",
+    accent: "gold",
+  },
+];
+
 function WhyChoose() {
-  const features = [
-    {
-      icon: "⚡",
-      title: "Lightning Fast Delivery",
-      description:
-        "Get your favourite food, groceries, medicines and parcels delivered quickly across Kundapura."
-    },
-    {
-      icon: "💰",
-      title: "Affordable Delivery",
-      description:
-        "Enjoy lower delivery charges with transparent pricing and no hidden fees."
-    },
-    {
-      icon: "🏪",
-      title: "Support Local Business",
-      description:
-        "We proudly partner with restaurants, supermarkets and local shops in Kundapura."
-    },
-    {
-      icon: "🛵",
-      title: "Professional Delivery",
-      description:
-        "Our delivery partners ensure safe, fast and reliable doorstep delivery every time."
-    },
-    {
-      icon: "📱",
-      title: "Easy Ordering",
-      description:
-        "Order food, groceries, medicines and more from a single app with a simple interface."
-    },
-    {
-      icon: "❤️",
-      title: "Customer First",
-      description:
-        "Your satisfaction is our priority with friendly support and quality local service."
-    }
-  ];
-
   return (
-    <section className="whychoose" id="whychoose">
-
-      <div className="why-container">
-
-        <div className="why-header">
-
-          <span className="why-tag">
-            WHY CHOOSE NAAV
+    <section className="offers" id="offers">
+      <div className="offers-container">
+        <div className="offers-header">
+          <span className="offers-tag">
+            <Sparkles size={15} />
+            Offers &amp; savings
           </span>
-
           <h2>
-            Why Thousands Choose
-            <span> NAAV Delivery</span>
+            More reasons to order
+            <span> with NAAV.</span>
           </h2>
-
           <p>
-            NAAV is built exclusively for Kundapura to provide faster,
-            affordable and trustworthy local delivery services.
+            Enjoy ongoing offers built for Kundapura, from free first deliveries
+            to everyday savings on the essentials you love.
           </p>
-
         </div>
 
-        <div className="why-grid">
+        <div className="offers-grid">
+          {offers.map((offer) => {
+            const Icon = offer.icon;
 
-          {features.map((item, index) => (
-
-            <div
-              className="why-card"
-              key={index}
-            >
-
-              <div className="why-icon">
-                {item.icon}
-              </div>
-
-              <h3>
-                {item.title}
-              </h3>
-
-              <p>
-                {item.description}
-              </p>
-
-            </div>
-
-          ))}
-
+            return (
+              <article className="offer-card" key={offer.title}>
+                <span className={`offer-icon offer-icon-${offer.accent}`}>
+                  <Icon size={22} />
+                </span>
+                <span className="offer-badge">{offer.badge}</span>
+                <h3>{offer.title}</h3>
+                <p>{offer.description}</p>
+              </article>
+            );
+          })}
         </div>
 
+        <div className="offers-banner">
+          <div>
+            <strong>Ready to save on your next order?</strong>
+            <p>Download NAAV and unlock local offers across Kundapura.</p>
+          </div>
+          <a href="#restaurants" className="offers-banner-btn">
+            Browse partners
+            <ArrowRight size={18} />
+          </a>
+        </div>
       </div>
-
     </section>
   );
 }

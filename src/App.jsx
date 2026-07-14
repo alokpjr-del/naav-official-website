@@ -1,12 +1,13 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Stats from "./components/Stats";
-import About from "./components/About";
-import WhyChoose from "./components/WhyChoose";
 import Services from "./components/Services";
-import AppShowcase from "./components/AppShowcase";
-import Franchise from "./components/Franchise";
+import About from "./components/About";
+import Restaurants from "./components/Restaurants";
+import WhyChoose from "./components/WhyChoose";
 import Testimonials from "./components/Testimonials";
+import Franchise from "./components/Franchise";
+import AppShowcase from "./components/AppShowcase";
 import Footer from "./components/Footer";
 
 import "./App.css";
@@ -14,8 +15,6 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-
-      {/* Navigation */}
       <Navbar />
 
       <main>
@@ -23,15 +22,14 @@ function App() {
         <Stats />
         <Services />
         <About />
+        <Restaurants />
         <WhyChoose />
         <Testimonials />
         <Franchise />
         <AppShowcase />
       </main>
 
-      {/* Footer */}
       <Footer />
-
     </div>
   );
 }
