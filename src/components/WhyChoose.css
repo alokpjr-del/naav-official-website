@@ -1,205 +1,179 @@
-/* ==========================================
-   NAAV Official Website V2
-   Why Choose NAAV
-========================================== */
-
-.whychoose{
-    width:100%;
-    padding:100px 0;
-    background:linear-gradient(180deg,#f8fff9 0%,#ffffff 100%);
+.offers {
+  padding: 110px 24px;
+  background: #fffaf6;
 }
 
-.why-container{
-    width:90%;
-    max-width:1300px;
-    margin:auto;
+.offers-container {
+  width: min(1180px, 100%);
+  margin: auto;
 }
 
-/* ==========================
-        Header
-========================== */
-
-.why-header{
-    text-align:center;
-    max-width:760px;
-    margin:0 auto 70px;
+.offers-header {
+  max-width: 640px;
+  margin: 0 auto 56px;
+  text-align: center;
 }
 
-.why-tag{
-    display:inline-block;
-    padding:10px 20px;
-    border-radius:50px;
-    background:#e9fff1;
-    color:#00b140;
-    font-weight:700;
-    letter-spacing:.5px;
-    margin-bottom:18px;
+.offers-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  background: rgba(228, 43, 34, 0.08);
+  color: var(--brand-dark);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
 }
 
-.why-header h2{
-    font-size:46px;
-    color:#222;
-    font-weight:800;
-    margin-bottom:20px;
-    line-height:1.3;
+.offers-header h2 {
+  margin: 18px 0 16px;
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 800;
+  line-height: 1.14;
+  color: var(--ink);
 }
 
-.why-header h2 span{
-    color:#00b140;
+.offers-header h2 span {
+  color: var(--brand);
 }
 
-.why-header p{
-    font-size:18px;
-    color:#666;
-    line-height:1.8;
+.offers-header p {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.7;
 }
 
-/* ==========================
-        Cards
-========================== */
-
-.why-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
-.why-card{
-    background:#fff;
-    padding:40px 30px;
-    border-radius:24px;
-    border:1px solid #edf5ef;
-    text-align:center;
-    transition:.35s;
-    box-shadow:0 10px 25px rgba(0,0,0,.05);
-    position:relative;
-    overflow:hidden;
+.offer-card {
+  padding: 28px 24px;
+  border-radius: 22px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
 
-.why-card::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:5px;
-    background:#00b140;
-    transform:scaleX(0);
-    transition:.35s;
-    transform-origin:left;
+.offer-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
 }
 
-.why-card:hover::before{
-    transform:scaleX(1);
+.offer-icon {
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  color: #fff;
+  margin-bottom: 20px;
 }
 
-.why-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 22px 45px rgba(0,0,0,.12);
+.offer-icon-brand {
+  background: linear-gradient(135deg, var(--brand), var(--brand-deep));
 }
 
-.why-icon{
-    width:85px;
-    height:85px;
-    margin:0 auto 25px;
-    border-radius:50%;
-    background:#00b140;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:38px;
-    color:#fff;
-    transition:.35s;
+.offer-icon-gold {
+  background: linear-gradient(135deg, var(--gold), #c67f17);
 }
 
-.why-card:hover .why-icon{
-    transform:rotate(10deg) scale(1.08);
+.offer-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 50px;
+  background: var(--cream);
+  color: var(--brand-dark);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
 }
 
-.why-card h3{
-    font-size:22px;
-    color:#222;
-    margin-bottom:15px;
-    font-weight:700;
+.offer-card h3 {
+  margin: 14px 0 10px;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--ink);
 }
 
-.why-card p{
-    color:#666;
-    font-size:16px;
-    line-height:1.8;
+.offer-card p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
 }
 
-/* ==========================
-      Responsive
-========================== */
-
-@media(max-width:1100px){
-
-.why-grid{
-grid-template-columns:repeat(2,1fr);
+.offers-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-top: 40px;
+  padding: 34px 40px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, var(--brand-deep), var(--brand));
+  color: #fff;
+  box-shadow: var(--shadow-lg);
 }
 
+.offers-banner strong {
+  font-size: 22px;
+  font-weight: 800;
 }
 
-@media(max-width:768px){
-
-.whychoose{
-padding:80px 0;
+.offers-banner p {
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
 }
 
-.why-header h2{
-font-size:36px;
+.offers-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: 14px;
+  background: #fff;
+  color: var(--brand-dark);
+  font-size: 15px;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.why-header p{
-font-size:16px;
+.offers-banner-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
 }
 
-.why-grid{
-grid-template-columns:1fr;
-gap:24px;
+@media (max-width: 1100px) {
+  .offers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.why-card{
-padding:35px 25px;
+@media (max-width: 760px) {
+  .offers {
+    padding: 90px 20px;
+  }
+
+  .offers-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 24px;
+  }
 }
 
-}
-
-@media(max-width:480px){
-
-.why-container{
-width:92%;
-}
-
-.why-header{
-margin-bottom:50px;
-}
-
-.why-header h2{
-font-size:30px;
-}
-
-.why-tag{
-font-size:13px;
-}
-
-.why-card{
-padding:30px 20px;
-}
-
-.why-icon{
-width:70px;
-height:70px;
-font-size:30px;
-}
-
-.why-card h3{
-font-size:20px;
-}
-
-.why-card p{
-font-size:15px;
-}
-
+@media (max-width: 520px) {
+  .offers-grid {
+    grid-template-columns: 1fr;
+  }
 }
