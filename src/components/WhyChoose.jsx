@@ -50,8 +50,8 @@ function WhyChoose() {
             <span> with NAAV.</span>
           </h2>
           <p>
-            Enjoy ongoing offers built for Kundapura, from free first deliveries
-            to everyday savings on the essentials you love.
+            Explore changing offers built for Kundapura, from welcome savings
+            to everyday value on the essentials you love.
           </p>
         </div>
 
@@ -75,7 +75,7 @@ function WhyChoose() {
         <div className="offers-banner">
           <div>
             <strong>Ready to save on your next order?</strong>
-            <p>Download NAAV and unlock local offers across Kundapura.</p>
+            <p>Explore NAAV to discover local value across Kundapura.</p>
           </div>
           <a href="#restaurants" className="offers-banner-btn">
             Browse partners
